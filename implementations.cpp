@@ -69,7 +69,7 @@ void Stack<T>::operations() {
                     cin >> element;
                     
                     while (cin.fail()){
-                        cout << "Invalid input. Please try again." <<endl;
+                        cout << "\x1b[31m\nInvalid input. Ensure it is an integer.\x1b[0m\n" <<endl;
                         cin.clear();
                         cin.ignore();
                         cout << "Enter the element to push: ";
