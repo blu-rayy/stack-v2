@@ -1,6 +1,5 @@
 #pragma once
 template <typename T>
-using namespace std;
 
 
 class Stack {

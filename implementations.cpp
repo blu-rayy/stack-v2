@@ -3,7 +3,7 @@
 using namespace std;
 
 template <typename T>
-T pop() {
+T Stack<T>:: pop() {
     if (top == -1){
 			cout << "Stack is empty. . No elements to pop.";
 			return -1;
@@ -15,7 +15,7 @@ T pop() {
 template <typename T>
 void Stack<T>::display() {
     if (top == -1){
-        	cout << "Stack is empty. No element to display.";
+        	cout << "Stack is empty. No e\lement to display.";
 		} else{
 			for (int i = top; i >= 0; i--){
 				cout << "Elements in stack: " << a[i] << " ";
