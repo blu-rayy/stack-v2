@@ -3,17 +3,18 @@ using namespace std;
 
 template <typename T>
 class Stack {
-private:
-    T* a;
-    int n;
-    int top;
+    private:
+        T* a;
+        int n;
+        int top;
 
-public:
-    T pop();
-    Stack(int size);
-    void push(T element);
-    void display();
-    void operations();
-
-
+    public:
+        Stack(int size);
+        ~Stack();
+        T pop();
+        void push(T element);
+        void display();
+        void operations();
 };
+
+    

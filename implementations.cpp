@@ -10,15 +10,10 @@ Stack<T>::Stack(int size) {
 }
 
 template <typename T>
-void Stack<T>::push(T element) {
-    if (top == n - 1) {
-        cout << "Stack is full\n";
-    }
-    else {
-        ++top;
-        a[top] = element;
-    }
+Stack<T>::~Stack() {
+    delete[] a;
 }
+
 
 template <typename T>
 T Stack<T>::pop() {
@@ -32,15 +27,25 @@ T Stack<T>::pop() {
 }
 
 template <typename T>
-void Stack<T>::display() {
-    if (top == -1) {
-        cout << "Stack is empty. No elements to display.";
+void Stack<T>::push(T element) {
+    if (top == n - 1) {
+        cout << "Stack is full\n";
     }
     else {
-        for (int i = top; i >= 0; i--) {
-            cout << "Elements in stack: " << a[i] << " ";
-        }
+        ++top;
+        a[top] = element;
     }
+}
+
+template <typename T>
+void Stack<T>::display() {
+    if (top == -1){
+        	cout << "Stack is empty. No element to display.";
+		} else{
+			for (int i = top; i >= 0; i--){
+				cout << "Elements in stack: " << a[i] << ",  ";
+			}
+		}
 }
 
 template <typename T>
@@ -77,3 +82,5 @@ void Stack<T>::operations() {
         }
     }
 }
+
+template class Stack<int>;
