@@ -80,6 +80,14 @@ void Stack<T>::operations() {
                     T element;
                     cout << "Enter the element to push: ";
                     cin >> element;
+                    
+                    while (cin.fail()){
+                        cout << "Invalid input. Please try again." <<endl;
+                        cin.clear();
+                        cin.ignore();
+                        cout << "Enter the element to push: ";
+                        cin >> element;
+                    }
                     push(element);
                     break;
                 }
