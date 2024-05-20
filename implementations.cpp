@@ -48,17 +48,18 @@ void Stack<T>::display() {
 			for (int i = top; i >= 0; i--){
 				cout << a[i] << ", ";
 			}
+            cout << endl;
 		}
 }
 
 template <typename T>
 void Stack<T>::operations() {
-    system("PAUSE");
-    system("CLS");
-    cout << "== STACK INVENTORY ==" << endl << endl;
         int ch;
         string input;
         while(true) {
+            system("PAUSE");
+            system("CLS");
+            cout << "== STACK INVENTORY ==" << endl << endl;
         cout << "\nStack Operations Menu\n1- Push an element\n2- Pop\n3- Display the elements\n4- Exit\nSelect an operation: ";
         cin >> ch;
             
