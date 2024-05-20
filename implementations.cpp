@@ -67,17 +67,14 @@ void Stack<T>::operations() {
                     T element;
                     cout << "Enter the element to push: ";
                     cin >> element;
-                    while (true) {
-                       
-                        if (cin.fail()) {
-                            cout << "\x1b[31m\nPlease enter an integer input only. \x1b[0m\n";
-                            cin.clear();
-                            cin.ignore();
-                            cout << "Enter the element to push: ";
-                        }
-                        else break;
+                    
+                    while (cin.fail()){
+                        cout << "Invalid input. Please try again." <<endl;
+                        cin.clear();
+                        cin.ignore();
+                        cout << "Enter the element to push: ";
+                        cin >> element;
                     }
-
                     push(element);
                     break;
                 }
