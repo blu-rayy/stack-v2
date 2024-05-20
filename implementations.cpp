@@ -1,9 +1,8 @@
 #include <iostream>
 #include "data.h"
-template <typename T>
 using namespace std;
 
-
+template <typename T>
 T pop() {
     if (top == -1){
 			cout << "Stack is empty. . No elements to pop.";
@@ -13,6 +12,7 @@ T pop() {
 		}
 }
 
+template <typename T>
 void Stack<T>::display() {
     if (top == -1){
         	cout << "Stack is empty. No element to display.";
@@ -23,6 +23,7 @@ void Stack<T>::display() {
 		}
 }
 
+template <typename T>
 void Stack<T>::operations() {
     int ch;
     while (true) {
