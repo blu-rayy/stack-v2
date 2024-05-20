@@ -4,6 +4,8 @@ using namespace std;
 
 int main() {
     int size;
+    cout << "== STACK INVENTORY ==" << endl << endl;
+
     cout << "Enter the size of the stack: ";
     cin >> size;
 

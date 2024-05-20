@@ -18,7 +18,7 @@ Stack<T>::~Stack() {
 template <typename T>
 T Stack<T>::pop() {
     if (top == -1) {
-        cout << "Stack is empty. . No elements to pop.";
+        cout << "\x1b[31m\nStack is empty! No elements to pop! \x1b[0m\n";
         return -1;
     }
     else {
@@ -29,29 +29,35 @@ T Stack<T>::pop() {
 template <typename T>
 void Stack<T>::push(T element) {
     if (top == n - 1) {
-        cout << "Stack is full\n";
+        cout << "\x1b[31m\nStack is full!\x1b[0m\n";
     }
     else {
         ++top;
         a[top] = element;
+        cout << "\x1b[32m \nElement added! \x1b[0m" << endl;
     }
 }
 
 template <typename T>
 void Stack<T>::display() {
     if (top == -1){
-        	cout << "Stack is empty. No element to display.";
+        	cout << "\x1b[31m\nStack is Empty! No elements to display. \x1b[0m\n";
 		} else{
+        cout << "Elements in stack: ";
 			for (int i = top; i >= 0; i--){
-				cout << "Elements in stack: " << a[i] << ",  ";
+				cout << a[i] << ", ";
 			}
 		}
 }
 
 template <typename T>
 void Stack<T>::operations() {
+
     int ch;
     while (true) {
+        system("PAUSE");
+        system("CLS");
+        cout << "== STACK INVENTORY ==" << endl << endl;
         cout << "\nStack Operations Menu\n1- Push an element\n2- Pop\n3- Display the elements\n4- Exit\nSelect an operation: ";
         cin >> ch;
         switch (ch) {
@@ -77,7 +83,7 @@ void Stack<T>::operations() {
             exit(0);
         }
         default: {
-            cout << "Invalid choice.\n";
+            cout << "\x1b[31m\nInvalid chouce. \x1b[0m\n";
         }
         }
     }
