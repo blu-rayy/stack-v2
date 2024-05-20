@@ -3,7 +3,25 @@
 using namespace std;
 
 template <typename T>
-T pop() {
+Stack<T>::Stack(int size) {
+    n = size;
+    a = new T[n];
+    top = -1;
+}
+
+template <typename T>
+void Stack<T>::push(T element) {
+    if (top == n - 1) {
+        cout << "Stack is full\n";
+    }
+    else {
+        ++top;
+        a[top] = element;
+    }
+}
+
+template <typename T>
+T Stack<T>::pop() {
     if (top == -1){
 			cout << "Stack is empty. . No elements to pop.";
 			return -1;
@@ -57,4 +75,3 @@ void Stack<T>::operations() {
         }
     }
 }
-};
