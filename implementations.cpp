@@ -52,43 +52,57 @@ void Stack<T>::display() {
 
 template <typename T>
 void Stack<T>::operations() {
-
-    int ch;
-    while (true) {
-        system("PAUSE");
-        system("CLS");
-        cout << "== STACK INVENTORY ==" << endl << endl;
+        int ch;
+        string input;
+        while(true) {
+            while (true) {
         cout << "\nStack Operations Menu\n1- Push an element\n2- Pop\n3- Display the elements\n4- Exit\nSelect an operation: ";
-        cin >> ch;
-        switch (ch) {
-        case 1: {
-            T element;
-            cout << "Enter the element to push: ";
-            cin >> element;
-            push(element);
-            break;
-        }
-        case 2: {
-            T val = pop();
-            if (val != -1) {
-                cout << "Popped element: " << val << endl;
+            getline(cin, input);
+
+        bool valid_input = true;
+        for (char c : input) {
+            if (!isdigit(c)) {
+                valid_input = false;
+                break;
             }
+        }
+        if (valid_input&& input.length() == 1 && input >= "1" && input <= "4") {
+            ch = stoi(input);
             break;
         }
-        case 3: {
-            display();
-            break;
-        }
-        case 4: {
-            exit(0);
-        }
-        default: {
-            cout << "\x1b[31m\nInvalid choice. \x1b[0m\n";
-            cin.clear();
-            cin.ignore();
-        }
+        else {
+            cout << "\nPlease enter an integer input (1-4) only." << endl;
         }
     }
-}
+            
+            switch(ch) {
+                case 1: {
+                    T element;
+                    cout << "Enter the element to push: ";
+                    cin >> element;
+                    push(element);
+                    break;
+                }
+                case 2: {
+                    T val = pop();
+                    if(val != -1) {
+                        cout << "Popped element: " << val << endl;
+                    }
+                    break;
+                }
+                case 3: {
+                    display();
+                    break;
+                }
+                case 4: {
+                    exit(0);
+                }
+                default: {
+                    cout << "Invalid choice.\n";
+                }
+            }
+        }
+    }
+};
 
 template class Stack<int>;
