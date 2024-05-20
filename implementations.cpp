@@ -22,23 +22,25 @@ void Stack<T>::push(T element) {
 
 template <typename T>
 T Stack<T>::pop() {
-    if (top == -1){
-			cout << "Stack is empty. . No elements to pop.";
-			return -1;
-		} else {
-			return a[top--];
-		}
+    if (top == -1) {
+        cout << "Stack is empty. . No elements to pop.";
+        return -1;
+    }
+    else {
+        return a[top--];
+    }
 }
 
 template <typename T>
 void Stack<T>::display() {
-    if (top == -1){
-        	cout << "Stack is empty. No e\lement to display.";
-		} else{
-			for (int i = top; i >= 0; i--){
-				cout << "Elements in stack: " << a[i] << " ";
-			}
-		}
+    if (top == -1) {
+        cout << "Stack is empty. No elements to display.";
+    }
+    else {
+        for (int i = top; i >= 0; i--) {
+            cout << "Elements in stack: " << a[i] << " ";
+        }
+    }
 }
 
 template <typename T>
