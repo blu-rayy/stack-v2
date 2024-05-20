@@ -5,11 +5,22 @@ using namespace std;
 
 
 T pop() {
-    //TODO
+    if (top == -1){
+			cout << "Stack is empty. . No elements to pop.";
+			return -1;
+		} else {
+			return a[top--];
+		}
 }
 
 void Stack<T>::display() {
-    //TODO
+    if (top == -1){
+        	cout << "Stack is empty. No element to display.";
+		} else{
+			for (int i = top; i >= 0; i--){
+				cout << "Elements in stack: " << a[i] << " ";
+			}
+		}
 }
 
 void Stack<T>::operations() {
