@@ -1,8 +1,7 @@
 #pragma once
-template <typename T>
 using namespace std;
 
-
+template <typename T>
 class Stack {
 private:
     T* a;
