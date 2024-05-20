@@ -16,5 +16,3 @@ class Stack {
         void display();
         void operations();
 };
-
-    
