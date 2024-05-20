@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "data.h"
 using namespace std;
 
@@ -52,37 +53,35 @@ void Stack<T>::display() {
 
 template <typename T>
 void Stack<T>::operations() {
+    system("PAUSE");
+    system("CLS");
+    cout << "== STACK INVENTORY ==" << endl << endl;
         int ch;
         string input;
         while(true) {
-            while (true) {
         cout << "\nStack Operations Menu\n1- Push an element\n2- Pop\n3- Display the elements\n4- Exit\nSelect an operation: ";
-            getline(cin, input);
-
-        bool valid_input = true;
-        for (char c : input) {
-            if (!isdigit(c)) {
-                valid_input = false;
-                break;
-            }
-        }
-        if (valid_input&& input.length() == 1 && input >= "1" && input <= "4") {
-            ch = stoi(input);
-            break;
-        }
-        else {
-            cout << "\nPlease enter an integer input (1-4) only." << endl;
-        }
-    }
+        cin >> ch;
             
             switch(ch) {
                 case 1: {
                     T element;
                     cout << "Enter the element to push: ";
                     cin >> element;
+                    while (true) {
+                       
+                        if (cin.fail()) {
+                            cout << "\x1b[31m\nPlease enter an integer input only. \x1b[0m\n";
+                            cin.clear();
+                            cin.ignore();
+                            cout << "Enter the element to push: ";
+                        }
+                        else break;
+                    }
+
                     push(element);
                     break;
                 }
+
                 case 2: {
                     T val = pop();
                     if(val != -1) {
@@ -98,11 +97,14 @@ void Stack<T>::operations() {
                     exit(0);
                 }
                 default: {
-                    cout << "Invalid choice.\n";
+                    cout << "\x1b[31m\nInvalid choice.\x1b[0m\n";
+                    cin.clear();
+                    cin.ignore();
+                    system("PAUSE");
+                    system("CLS");
                 }
             }
         }
     }
-};
 
 template class Stack<int>;

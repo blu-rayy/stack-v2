@@ -24,7 +24,9 @@ int main() {
             break;
         }
         else {
-            cout << "\x1b[31m\nPlease enter an integer input only.\x1b[0m\n" << endl;
+            cout << "\x1b[31m\nPlease enter an integer input only.\x1b[0m\n";
+            cin.clear();
+            cin.ignore();
         }
     }
 
