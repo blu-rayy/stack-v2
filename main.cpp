@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "data.h"
+template <typename T>
 using namespace std;
 
 int main() {
