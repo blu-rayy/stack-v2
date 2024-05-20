@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "data.h"
 using namespace std;
 
@@ -6,6 +7,7 @@ int main() {
     string input;
     int size;
     cout << "== STACK INVENTORY ==" << endl << endl;
+
      while (true) {
         cout << "Enter the size of the stack: ";
     	getline(cin, input);
@@ -22,7 +24,7 @@ int main() {
             break;
         }
         else {
-            cout << "\nPlease enter an integer input only." << endl;
+            cout << "\x1b[31m\nPlease enter an integer input only.\x1b[0m\n" << endl;
         }
     }
 

@@ -83,7 +83,9 @@ void Stack<T>::operations() {
             exit(0);
         }
         default: {
-            cout << "\x1b[31m\nInvalid chouce. \x1b[0m\n";
+            cout << "\x1b[31m\nInvalid choice. \x1b[0m\n";
+            cin.clear();
+            cin.ignore();
         }
         }
     }
